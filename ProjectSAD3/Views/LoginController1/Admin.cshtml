@@ -1,0 +1,29 @@
+﻿@model User
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-5 col-sm-12">
+               @Html.ActionLink("Item", "Index", "Admin")
+           </div>
+
+           <div class="col-md-5 col-sm-12">
+             
+               @Html.ActionLink("Orders","orders","Admin")
+           </div>
+
+
+       </div>
+   </div>
+</body>
+</html>

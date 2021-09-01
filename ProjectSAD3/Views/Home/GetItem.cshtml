@@ -1,0 +1,54 @@
+﻿@model ProjectSAD3.ViewModel.ViewModelOrder
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetItem</title>
+</head>
+<body>
+   <div class="container">
+       <div class="row justify-content-center">
+           <div class="text-center">
+               @{
+                   var x = Model.computer.ImgPath.Split("\\");
+               }
+               <img src="/images/@x[9]" width="300" height="300" />
+               <h3>@Model.computer.Company - @Model.computer.Models</h3>
+               <h5>@Model.computer.Description</h5>
+               <p>Price : @Model.computer.price</p>
+
+               <div class="col-md-6 col-sm-12 offset-md-3">
+                   <div class="text-center">
+                       <div class="card">
+                           <div class="card-body">
+                               <form method="post">
+                                   <div class="form-group">
+                                       <input type="text" asp-for="@Model.order.Name"  class="form-control" placeholder="Name"/>
+                                   </div>
+
+                                   <div class="form-group">
+                                       <input type="text" asp-for="@Model.order.phone" class="form-control" placeholder="Phone" />
+                                   </div>
+
+                                   <div class="form-group">
+                                       <input type="text" asp-for="@Model.order.Address" class="form-control" placeholder="Address" />
+                                   </div>
+
+                                   <div class="form-group">
+                                       <input type="submit" class="btn btn-info" value="Buy" />
+                                   </div>
+                               </form>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
